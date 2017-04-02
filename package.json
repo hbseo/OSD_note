@@ -1,20 +1,13 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "react": "^15.4.2",
-    "react-bootstrap": "^0.30.8",
-    "react-dom": "^15.4.2"
-  },
+  "name": "polymer-starter-kit",
+  "license": "BSD-3-Clause",
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "eslint": "^3.12.0",
+    "eslint-config-google": "^0.7.1",
+    "eslint-plugin-html": "^1.7.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "lint": "eslint . --ext js,html --ignore-path .gitignore",
+    "test": "npm run lint && polymer test"
   }
 }
