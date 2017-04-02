@@ -1,0 +1,133 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Note
+    // Bootstrap Core CSS
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", rel='stylesheet')
+    // Custom CSS
+    link(href='../public/stylesheets/shop-homepage.css', rel='stylesheet')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    style.
+      .container {
+        margin-left:10%;
+      }
+      .ang_gimodak {
+        margin-top:10px;
+      }
+      .ang_gimoddi {
+        margin-top:60px;
+      }
+  body
+    // Navigation
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='./') My Note
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='#') Login
+            li
+              a(href='#') Register 
+            li.ang_gimodak
+              .search
+                input.form-control.input-sm(type='text', maxlength='64', placeholder='Search')
+            li.ang_gimodak  
+              button.btn.btn-primary.btn-sm(type='submit') Search
+
+        // /.navbar-collapse
+      // /.container
+    // Page Content
+    .container
+      .row
+        .col-md-3
+          p.lead Menu
+          .list-group
+            a.list-group-item(href='./') Note
+            a.list-group-item(href='/calendar') Calendar
+            a.list-group-item(href='/schedule') Schedule
+        .col-md-9.ang_gimoddi
+          .row
+            .col-sm-4.col-lg-4.col-md-4
+              .thumbnail
+                img(src='http://placehold.it/320x150', alt='')
+                .caption
+                  h4
+                    a(href='#') 제목
+                  p
+                    | ㅋㅋ
+                  p 2017.04.02
+            .col-sm-4.col-lg-4.col-md-4
+              .thumbnail
+                img(src='http://placehold.it/320x150', alt='')
+                .caption
+                  h4
+                    a(href='#') 제목
+                  p
+                    | ㅋㅋ
+                  p 2017.04.02
+            .col-sm-4.col-lg-4.col-md-4
+              .thumbnail
+                img(src='http://placehold.it/320x150', alt='')
+                .caption
+                  h4
+                    a(href='#') 제목
+                  p
+                    | ㅋㅋ
+                  p 2017.04.02
+            .col-sm-4.col-lg-4.col-md-4
+              .thumbnail
+                img(src='http://placehold.it/320x150', alt='')
+                .caption
+                  h4
+                    a(href='#') 제목
+                  p
+                    | ㅋㅋ
+                  p 2017.04.02
+            .col-sm-4.col-lg-4.col-md-4
+              .thumbnail
+                img(src='http://placehold.it/320x150', alt='')
+                .caption
+                  h4
+                    a(href='#') 제목
+                  p
+                    | ㅋㅋ
+                  p 2017.04.02
+            .col-sm-4.col-lg-4.col-md-4
+              .thumbnail
+                img(src='http://placehold.it/320x150', alt='')
+                .caption
+                  h4
+                    a(href='#') 제목
+                  p
+                    | ㅋㅋ
+                  p 2017.04.02
+    // /.container
+    .container
+      hr
+      // Footer
+      footer
+        .row
+          .col-lg-12
+            p Copyright © 서현범 2017
+    // /.container
+    // jQuery
+    script(src='../public/javascripts/jquery.js')
+    // Bootstrap Core JavaScript
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
