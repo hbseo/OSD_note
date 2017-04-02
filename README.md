@@ -1,2 +1,1 @@
-# OSD_note  
-모딱
+# OSD_note
