@@ -1,5 +1,12 @@
+/*!
+ * FullCalendar v1.6.3 Stylesheet
+ * Docs & License: http://arshaw.com/fullcalendar/
+ * (c) 2013 Adam Shaw
+ */
+
+
 .fc {
-    direction: ltr;
+	direction: ltr;
 	text-align: left;
 	}
 	
@@ -10,7 +17,7 @@
 	
 html .fc,
 .fc table {
-	font-size: 1em;
+	font-size: 12px;
 	}
 	
 .fc td,
@@ -33,9 +40,8 @@ html .fc,
 	text-align: left;
 	}
 	
-.fc-header-center {
-	text-align: center;
-	}
+.fc-header-center {text-align: center;}
+.fc-header-center h2{font-family:NanumGothicBold;font-size:20px; color:#3c5a89; }
 	
 .fc-header-right {
 	width: 25%;
@@ -114,11 +120,12 @@ html .fc,
 	}
 	
 .fc-state-highlight { /* <td> today cell */ /* TODO: add .fc-today to <th> */
-	background: #fcfcfc;
+	background: #f6ffe1;
+	font-weight:bold; 
 	}
 	
 .fc-cell-overlay { /* semi-transparent rectangle while dragging */
-	background: #bcccbc;
+	background: #bce8f1;
 	opacity: .3;
 	filter: alpha(opacity=30); /* for IE */
 	}
@@ -137,17 +144,53 @@ html .fc,
 	line-height: 1.9em;
 	white-space: nowrap;
 	cursor: pointer;
-}
+	}
+	
+.fc-state-default { /* non-theme */
+	border: 1px solid;
+	}
 
+.fc-state-default.fc-corner-left { /* non-theme */
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	}
+
+.fc-state-default.fc-corner-right { /* non-theme */
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	}
+
+/*
+	Our default prev/next buttons use HTML entities like &lsaquo; &rsaquo; &laquo; &raquo;
+	and we'll try to make them look good cross-browser.
+*/
 
 .fc-text-arrow {
 	margin: 0 .1em;
 	font-size: 2em;
-	font-family: "Courier New", Courier, monospace;
 	vertical-align: baseline; /* for IE7 */
 	}
 
-
+.fc-button-prev .fc-text-arrow,
+.fc-button-next .fc-text-arrow { /* for &lsaquo; &rsaquo; */
+	font-weight: bold;
+	}
+	
+/* icon (for jquery ui) */
+	
+.fc-button .fc-icon-wrap {
+	position: relative;
+	float: left;
+	top: 50%;
+	}
+	
+.fc-button .ui-icon {
+	position: relative;
+	float: left;
+	margin-top: -50%;
+	*margin-top: 0;
+	*top: -50%;
+	}
 	
 /*
   button states
@@ -156,6 +199,17 @@ html .fc,
 
 .fc-state-default {
 	background-color: #f5f5f5;
+	background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+	background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+	background-repeat: repeat-x;
+	border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	color: #333;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 	}
 
 .fc-state-hover,
@@ -187,7 +241,7 @@ html .fc,
 .fc-state-disabled {
 	cursor: default;
 	background-image: none;
-	opacity: 0.55;
+	opacity: 0.65;
 	filter: alpha(opacity=65);
 	box-shadow: none;
 	}
@@ -207,10 +261,8 @@ html .fc,
 	}
 	 
 .fc-event {
-	border: 1px solid #3a87ad; /* default BORDER color */
-	background-color: #3a87ad; /* default BACKGROUND color */
+	background-color: #6296c7; /* default BACKGROUND color */
 	color: #fff;               /* default TEXT color */
-	font-size: .85em;
 	cursor: default;
 	}
 
@@ -233,10 +285,8 @@ a.fc-event,
 	overflow: hidden;
 	}
 	
-.fc-event-time,
-.fc-event-title {
-	padding: 0 1px;
-	}
+.fc-event-time{ display:block; font-size:11px;color:#a4ccf1; padding:2px 2px 0 5px; line-height:14px;/*background:url('../images/btn_page_next.gif') 2px 3px no-repeat;*/}
+.fc-event-title {display:block; font-size:11px; padding: 0 2px 3px 5px; line-height:13px; letter-spacing:-1px;}
 	
 .fc .ui-resizable-handle {
 	display: block;
@@ -259,12 +309,14 @@ a.fc-event,
 
 .fc-ltr .fc-event-hori.fc-event-start,
 .fc-rtl .fc-event-hori.fc-event-end {
-	border-left-width: 1px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
 	}
 
 .fc-ltr .fc-event-hori.fc-event-end,
 .fc-rtl .fc-event-hori.fc-event-start {
-	border-right-width: 1px;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
 	}
 	
 /* resizable */
@@ -289,30 +341,28 @@ a.fc-event,
 	_padding-bottom: 14px; /* IE6 had 0 height */
 	}
 	
+	
+	
+/* Reusable Separate-border Table
+------------------------------------------------------------*/
 
 table.fc-border-separate {
 	border-collapse: separate;
 	}
 	
-.fc-border-separate th,
-.fc-border-separate td {
-	border-width: 1px 0 0 1px;
-	}
+.fc-border-separate th{background:#f1f1f1; border-width: 1px 0 0 1px;}
+.fc-border-separate td {border-width: 1px 0 0 1px;}
 	
-.fc-border-separate th.fc-last,
-.fc-border-separate td.fc-last {
-	border-right-width: 1px;
-	}
+.fc-border-separate th.fc-last {border-right-width: 1px;}
+.fc-border-separate td.fc-last {background:#f7fbff; border-right-width: 1px; color:#4971c8}
 	
 .fc-border-separate tr.fc-last th,
-.fc-border-separate tr.fc-last td {
-	border-bottom-width: 1px;
-	}
+.fc-border-separate tr.fc-last td{border-bottom-width: 1px;}
+
 	
 .fc-border-separate tbody tr.fc-first td,
-.fc-border-separate tbody tr.fc-first th {
-	border-top-width: 0;
-	}
+.fc-border-separate tbody tr.fc-first th {border-top-width: 0;}
+.fc-border-separate tbody tr td.fc-first{background:#fffaf5; color:#f1643e;}
 	
 	
 
@@ -335,7 +385,9 @@ table.fc-border-separate {
 .fc-grid .fc-day-number {
 	float: right;
 	padding: 0 2px;
+	cursor:pointer;
 	}
+ .fc-day-number:hover{text-decoration:underline;}
 	
 .fc-grid .fc-other-month .fc-day-number {
 	opacity: 0.3;
@@ -468,10 +520,14 @@ table.fc-border-separate {
 
 .fc-event-vert.fc-event-start {
 	border-top-width: 1px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 	}
 
 .fc-event-vert.fc-event-end {
 	border-bottom-width: 1px;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
 	}
 	
 .fc-event-vert .fc-event-time {
@@ -510,9 +566,12 @@ table.fc-border-separate {
 	overflow: hidden !important;
 	line-height: 8px !important;
 	font-size: 11px  !important;
-	font-family: monospace;
 	text-align: center;
 	cursor: s-resize;
+	}
+	
+.fc-agenda .ui-resizable-resizing { /* TODO: better selector */
+	_overflow: hidden;
 	}
 	
 	
