@@ -1,41 +1,5 @@
-/*!
- * FullCalendar v1.6.4 Stylesheet
- * Docs & License: http://arshaw.com/fullcalendar/
- * (c) 2013 Adam Shaw
- */
- @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
-td.fc-day {
-
-background:#FFF !important;
-font-family: 'Roboto', sans-serif;
-
-}
-td.fc-today {
-	background:#FFF !important;
-	position: relative;
-
-
-}
-
-.fc-first th{
-	font-family: 'Roboto', sans-serif;
-    background:#9675ce !important;
-	color:#FFF;
-	font-size:14px !important;
-	font-weight:500 !important;
-
-	}
-.fc-event-inner {
-	font-family: 'Roboto', sans-serif;
-    background: #03a9f3!important;
-    color: #FFF!important;
-    font-size: 12px!important;
-    font-weight: 500!important;
-    padding: 5px 0px!important;
-}
-
 .fc {
-	direction: ltr;
+    direction: ltr;
 	text-align: left;
 	}
 	
@@ -47,8 +11,6 @@ td.fc-today {
 html .fc,
 .fc table {
 	font-size: 1em;
-	font-family: "Helvetica Neue",Helvetica;
-
 	}
 	
 .fc td,
@@ -64,13 +26,12 @@ html .fc,
 
 .fc-header td {
 	white-space: nowrap;
-	padding: 15px 10px 0px;
-}
+	}
 
 .fc-header-left {
 	width: 25%;
 	text-align: left;
-}
+	}
 	
 .fc-header-center {
 	text-align: center;
@@ -84,26 +45,13 @@ html .fc,
 .fc-header-title {
 	display: inline-block;
 	vertical-align: top;
-	margin-top: -5px;
-}
+	}
 	
 .fc-header-title h2 {
 	margin-top: 0;
 	white-space: nowrap;
-	font-size: 32px;
-    font-weight: 100;
-    margin-bottom: 10px;
-		font-family: 'Roboto', sans-serif;
-}
-	span.fc-button {
-    font-family: 'Roboto', sans-serif;
-    border-color: #9675ce;
-	color: #9675ce;
-}
-.fc-state-down, .fc-state-active {
-    background-color: #9675ce !important;
-	color: #FFF !important;
-}
+	}
+	
 .fc .fc-header-space {
 	padding-left: 10px;
 	}
@@ -160,26 +108,17 @@ html .fc,
 /* Cell Styles
 ------------------------------------------------------------------------*/
 
-    /* <th>, usually */
+.fc-widget-header,    /* <th>, usually */
 .fc-widget-content {  /* <td>, usually */
-	border: 1px solid #e5e5e5;
+	border: 1px solid #ddd;
 	}
-.fc-widget-header{
-    border-bottom: 1px solid #EEE; 
-}	
+	
 .fc-state-highlight { /* <td> today cell */ /* TODO: add .fc-today to <th> */
-	/* background: #fcf8e3; */
-}
-
-.fc-state-highlight > div > div.fc-day-number{
-    background-color: #ff3b30;
-    color: #FFFFFF;
-    border-radius: 50%;
-    margin: 4px;
-}
+	background: #fcfcfc;
+	}
 	
 .fc-cell-overlay { /* semi-transparent rectangle while dragging */
-	background: #bce8f1;
+	background: #bcccbc;
 	opacity: .3;
 	filter: alpha(opacity=30); /* for IE */
 	}
@@ -198,77 +137,37 @@ html .fc,
 	line-height: 1.9em;
 	white-space: nowrap;
 	cursor: pointer;
-	}
-	
-.fc-state-default { /* non-theme */
-	border: 1px solid;
-	}
+}
 
-.fc-state-default.fc-corner-left { /* non-theme */
-	border-top-left-radius: 4px;
-	border-bottom-left-radius: 4px;
-	}
-
-.fc-state-default.fc-corner-right { /* non-theme */
-	border-top-right-radius: 4px;
-	border-bottom-right-radius: 4px;
-	}
-
-/*
-	Our default prev/next buttons use HTML entities like ‹ › « »
-	and we'll try to make them look good cross-browser.
-*/
 
 .fc-text-arrow {
-	margin: 0 .4em;
+	margin: 0 .1em;
 	font-size: 2em;
-	line-height: 23px;
+	font-family: "Courier New", Courier, monospace;
 	vertical-align: baseline; /* for IE7 */
 	}
 
-.fc-button-prev .fc-text-arrow,
-.fc-button-next .fc-text-arrow { /* for ‹ › */
-	font-weight: bold;
-	}
-	
-/* icon (for jquery ui) */
-	
-.fc-button .fc-icon-wrap {
-	position: relative;
-	float: left;
-	top: 50%;
-	}
-	
-.fc-button .ui-icon {
-	position: relative;
-	float: left;
-	margin-top: -50%;
-	
-	*margin-top: 0;
-	*top: -50%;
-	}
 
+	
+/*
+  button states
+  borrowed from twitter bootstrap (http://twitter.github.com/bootstrap/)
+*/
 
 .fc-state-default {
-	border-color: #ff3b30;
-	color: #ff3b30;	
-}
-.fc-button-month.fc-state-default, .fc-button-agendaWeek.fc-state-default, .fc-button-agendaDay.fc-state-default{
-    min-width: 67px;
-	text-align: center;
-	transition: all 0.2s;
-	-webkit-transition: all 0.2s;
-}
+	background-color: #f5f5f5;
+	}
+
 .fc-state-hover,
 .fc-state-down,
 .fc-state-active,
 .fc-state-disabled {
 	color: #333333;
-	background-color: #FFE3E3;
+	background-color: #e6e6e6;
 	}
 
 .fc-state-hover {
-	color: #ff3b30;
+	color: #333333;
 	text-decoration: none;
 	background-position: 0 -15px;
 	-webkit-transition: background-position 0.1s linear;
@@ -279,20 +178,18 @@ html .fc,
 
 .fc-state-down,
 .fc-state-active {
-	background-color: #ff3b30;
+	background-color: #cccccc;
 	background-image: none;
 	outline: 0;
-	color: #FFFFFF;
-}
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	}
 
 .fc-state-disabled {
 	cursor: default;
 	background-image: none;
-	background-color: #FFE3E3;
+	opacity: 0.55;
 	filter: alpha(opacity=65);
 	box-shadow: none;
-	border:1px solid #FFE3E3;
-	color: #ff3b30;
 	}
 
 	
@@ -310,27 +207,13 @@ html .fc,
 	}
 	 
 .fc-event {
-	border: 1px solid #FFF; /* default BORDER color */
-	background-color: #FFF; /* default BACKGROUND color */
-	color: #919191;               /* default TEXT color */
-	font-size: 12px;
+	border: 1px solid #3a87ad; /* default BORDER color */
+	background-color: #3a87ad; /* default BACKGROUND color */
+	color: #fff;               /* default TEXT color */
+	font-size: .85em;
 	cursor: default;
-}
-.fc-event.chill{
-    background-color: #f3dcf8;
-}
-.fc-event.info{
-    background-color: #c6ebfe;
-}
-.fc-event.important{
-    background-color: #FFBEBE;
-}
-.fc-event.success{
-    background-color: #BEFFBF;
-}
-.fc-event:hover{
-    opacity: 0.7;
-}
+	}
+
 a.fc-event {
 	text-decoration: none;
 	}
@@ -348,7 +231,6 @@ a.fc-event,
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	line-height: 15px;
 	}
 	
 .fc-event-time,
@@ -378,19 +260,11 @@ a.fc-event,
 .fc-ltr .fc-event-hori.fc-event-start,
 .fc-rtl .fc-event-hori.fc-event-end {
 	border-left-width: 1px;
-	/*
-border-top-left-radius: 3px;
-	border-bottom-left-radius: 3px;
-*/
 	}
 
 .fc-ltr .fc-event-hori.fc-event-end,
 .fc-rtl .fc-event-hori.fc-event-start {
 	border-right-width: 1px;
-	/*
-border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-*/
 	}
 	
 /* resizable */
@@ -415,10 +289,6 @@ border-top-right-radius: 3px;
 	_padding-bottom: 14px; /* IE6 had 0 height */
 	}
 	
-	
-	
-/* Reusable Separate-border Table
-------------------------------------------------------------*/
 
 table.fc-border-separate {
 	border-collapse: separate;
@@ -434,23 +304,11 @@ table.fc-border-separate {
 	border-right-width: 1px;
 	}
 	
-
+.fc-border-separate tr.fc-last th,
 .fc-border-separate tr.fc-last td {
+	border-bottom-width: 1px;
+	}
 	
-}
-.fc-border-separate .fc-week .fc-first{
-    border-left: 0;
-}
-.fc-border-separate .fc-week .fc-last{
-    border-right: 0;
-}
-.fc-border-separate tr.fc-last th{
-    border-bottom-width: 1px;
-    border-color: #cdcdcd;
-    font-size: 16px;
-    font-weight: 300;
-	line-height: 30px;
-}
 .fc-border-separate tbody tr.fc-first td,
 .fc-border-separate tbody tr.fc-first th {
 	border-top-width: 0;
@@ -589,6 +447,11 @@ table.fc-border-separate {
 .fc-agenda-slots tr.fc-slot0 td {
 	border-top-width: 0;
 	}
+
+.fc-agenda-slots tr.fc-minor th,
+.fc-agenda-slots tr.fc-minor td {
+	border-top-style: dotted;
+	}
 	
 .fc-agenda-slots tr.fc-minor th.ui-widget-header {
 	*border-top-style: solid; /* doesn't work with background in IE6/7 */
@@ -605,14 +468,10 @@ table.fc-border-separate {
 
 .fc-event-vert.fc-event-start {
 	border-top-width: 1px;
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px;
 	}
 
 .fc-event-vert.fc-event-end {
 	border-bottom-width: 1px;
-	border-bottom-left-radius: 3px;
-	border-bottom-right-radius: 3px;
 	}
 	
 .fc-event-vert .fc-event-time {
@@ -654,79 +513,6 @@ table.fc-border-separate {
 	font-family: monospace;
 	text-align: center;
 	cursor: s-resize;
-	}
-	
-.fc-agenda .ui-resizable-resizing { /* TODO: better selector */
-	_overflow: hidden;
-	}
-	
-thead tr.fc-first{
-    background-color: #f7f7f7;
-}
-table.fc-header{
-    background-color: #FFFFFF;
-    border-radius: 6px 6px 0 0;
-}
-
-.fc-week .fc-day > div .fc-day-number{
-    font-size: 15px;
-    margin: 2px;
-    min-width: 19px;
-    padding: 6px;
-    text-align: center;
-       width: 30px;
-    height: 30px;
-}
-.fc-sun, .fc-sat{
-    color: #b8b8b8;
-}
-
-.fc-week .fc-day:hover .fc-day-number{
-    background-color: #B8B8B8;
-    border-radius: 50%;
-    color: #FFFFFF;
-    transition: background-color 0.2s;
-}
-.fc-week .fc-day.fc-state-highlight:hover .fc-day-number{
-    background-color:  #ff3b30;
-}
-.fc-button-today{
-    border: 1px solid rgba(255,255,255,.0);
-}
-.fc-view-agendaDay thead tr.fc-first .fc-widget-header{
-    text-align: right;
-    padding-right: 10px;
-}
-
-/*!
- * FullCalendar v1.6.4 Print Stylesheet
- * Docs & License: http://arshaw.com/fullcalendar/
- * (c) 2013 Adam Shaw
- */
-
-/*
- * Include this stylesheet on your page to get a more printer-friendly calendar.
- * When including this stylesheet, use the media='print' attribute of the <link> tag.
- * Make sure to include this stylesheet IN ADDITION to the regular fullcalendar.css.
- */
- 
- 
- /* Events
------------------------------------------------------*/
- 
-.fc-event {
-	background: #fff !important;
-	color: #000 !important;
-	}
-	
-/* for vertical events */
-	
-.fc-event-bg {
-	display: none !important;
-	}
-	
-.fc-event .ui-resizable-handle {
-	display: none !important;
 	}
 	
 	
