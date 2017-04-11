@@ -1,0 +1,102 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Note
+    // Bootstrap Core CSS
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='../stylesheets/shop-homepage.css', rel='stylesheet')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //
+      if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    style.
+      .container {
+      margin-left:10%;
+      }
+      .ang_gimodak {
+      margin-top:10px;
+      }
+      .ang_gimoddi {
+      margin-top:60px;
+      }
+      fieldset ul {
+      list-style-type:none;
+      }
+      label.ang_gimoo {
+      font-weight: bold;
+      width: 50px;
+      float: left;
+      }
+      div.centered {
+      text-align: right;
+      }
+      #title,#contents {
+      width:86.5%;
+      }
+  body
+    // Navigation
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='./') My Note
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='#') Login
+            li
+              a(href='#') Register 
+        // /.navbar-collapse
+      // /.container
+    // Page Content
+    .container
+      .row
+        .col-md-3
+          p.lead Menu
+          .list-group
+            a.list-group-item(href='/note') Note
+            a.list-group-item(href='./') New
+            a.list-group-item(href='/calendar') Calendar
+            a.list-group-item(href='/schedule') Schedule
+        .col-md-9.ang_gimoddi
+          .row
+            form(action='/new', method='post', autocomplete='off')
+              fieldset
+                legend 메모
+                ul
+                  li
+                    label.ang_gimoo(for='title') 제목
+                    input#title(type='text')
+                  br
+                  li
+                    label.ang_gimoo(for='contents') 내용
+                    textarea#contents(name='contents', rows='10')
+                  .centered
+                    input(type='submit', value='저장')
+    // /.container
+    .container
+      hr
+      // Footer
+      footer
+        .row
+          .col-lg-12
+            p Copyright © 서현범 2017
+    // /.container
+    // jQuery
+    script(src='../javascripts/jquery.js')
+    // Bootstrap Core JavaScript
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
