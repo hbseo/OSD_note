@@ -119,13 +119,14 @@ html(lang='en')
             a.list-group-item(href='/schedule') Schedule
         .col-md-8.ang_gimoddi
           .row
-            .col-sm-4.col-lg-4.col-md-4
-              .thumbnail
-                .caption
-                  h4
-                    a(href='./memo') 제목
-                  p ㅋㅋ
-                  p 2017.04.02
+            each memo in memos
+              .col-sm-4.col-lg-4.col-md-4
+                .thumbnail
+                  .caption
+                    h4
+                      a(href='/'+memo._id)= memo.title
+                    p= memo.body
+                    p= memo.date
     // /.container
     .container
       hr
