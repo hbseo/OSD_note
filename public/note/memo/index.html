@@ -21,11 +21,26 @@
       .container {
         margin-left:10%;
       }
+      .ang_gimodak {
+        margin-top:10px;
+      }
       .ang_gimoddi {
         margin-top:60px;
       }
-      .btn-glyphicon { padding:8px; background:#ffffff; margin-right:4px; }
-      .icon-btn { padding: 1px 15px 3px 2px; border-radius:50px;}
+      fieldset ul {
+          list-style-type:none;
+      }
+      label.ang_gimoo {
+          font-weight: bold;
+          width: 50px;
+          float: left;
+      }
+      div.centered {
+          text-align: right;
+      }
+      #title,#contents {
+          width:86.5%;
+      }
     </style>
   </head>
   <body>
@@ -53,17 +68,34 @@
         <div class="col-md-3">
           <p class="lead">Menu</p>
           <div class="list-group">
-              <a href="../" class="list-group-item">Note</a>
-              <a href="/calendar" class="list-group-item">Calendar</a>
-              <a href="/schedule" class="list-group-item">Schedule</a></div>
+            <a href="/note" class="list-group-item">Note</a>
+            <a href="/new" class="list-group-item">New</a>
+            <a href="/calendar" class="list-group-item">Calendar</a>
+            <a href="/schedule" class="list-group-item">Schedule</a>
+          </div>
         </div>
         <div class="col-md-9 ang_gimoddi">
-            <div class="panel panel-default">
-                <div class="panel-heading">제목</div>
-                <div class="panel-body">
-                    내용
-                </div>
-            </div>
+          <div class="row">
+            <form action="#" method="post" autocomplete="off">
+                <fieldset>
+                    <legend>메모</legend>
+                    <ul>
+                        <li>
+                          <label for="title" class="ang_gimoo">제목</label>
+                          <input type="text" id="title">
+                        </li>
+                        <br>
+                        <li>
+                          <label for="contents" class="ang_gimoo">내용</label>
+                          <textarea name="contents" id="contents" rows="10"></textarea>
+                        </li>
+                        <div class="centered">
+                          <input type="submit" value="저장">
+                        </div>
+                    </ul>
+                </fieldset>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -81,7 +113,7 @@
     </div>
     <!-- /.container-->
     <!-- jQuery-->
-    <script src="../javascripts/jquery.js"></script>
+    <script src="../../javascripts/jquery.js"></script>
     <!-- Bootstrap Core JavaScript-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   </body>
