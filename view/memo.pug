@@ -38,7 +38,7 @@ html(lang='en')
       div.centered {
       text-align: right;
       }
-      #title,#contents {
+      #title,#body {
       width:86.5%;
       }
       /*!
@@ -134,11 +134,11 @@ html(lang='en')
                 ul
                   li
                     label.ang_gimoo(for='title') 제목
-                    input#title(type='text')
+                    input#title(type='text', name='title', value=memo.title)
                   br
                   li
-                    label.ang_gimoo(for='contents') 내용
-                    textarea#contents(name='contents', rows='10')
+                    label.ang_gimoo(for='body') 내용
+                    textarea#body(name='body', rows='10')= memo.body
                   .centered
                     input(type='submit', value='저장')
     // /.container
