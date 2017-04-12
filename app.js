@@ -41,6 +41,10 @@ app.get('/new', (req, res) => {
     res.render('new');
 });
 
+app.get('/calendar', (req, res) => {
+    res.render('calendar');
+});
+
 app.post('/new', (req, res) => {
     var newMemo = new Memo();
     newMemo.title = req.body.title;
@@ -51,7 +55,8 @@ app.post('/new', (req, res) => {
     });
 });
 
-app.get('/:id', (req, res) => {
+app.get('/memo/:id', (req, res) => {
+
     Memo.findById(req.params.id, (err, memo) => {
         res.render('memo', {memo:memo});
     });
