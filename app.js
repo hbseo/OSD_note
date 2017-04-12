@@ -45,6 +45,14 @@ app.get('/calendar', (req, res) => {
     res.render('calendar');
 });
 
+app.get('/main', (req, res) => {
+    res.render('main');
+});
+
+app.get('/schedule', (req, res) => {
+    res.render('schedule');
+});
+
 app.post('/new', (req, res) => {
     var newMemo = new Memo();
     newMemo.title = req.body.title;

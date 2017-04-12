@@ -27,6 +27,26 @@ html(lang='en')
       .ang_gimoddi {
       margin-top:60px;
       }
+      .txt_line {
+        width:10px; 
+        padding:0 5px;
+        overflow:hidden; 
+        text-overflow:ellipsis; 
+        white-space:nowrap;
+      }
+      .txt_post {
+        display: -webkit-box; 
+        display: -ms-flexbox; 
+        display: box; 
+        margin-top:1px; 
+        max-height:70px; 
+        overflow:hidden; 
+        vertical-align:top; 
+        text-overflow: ellipsis; 
+        word-break:break-all;
+        -webkit-box-orient:vertical; 
+        -webkit-line-clamp:2
+      }
       /*!
         * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
         * Copyright 2013-2016 Start Bootstrap
@@ -124,8 +144,8 @@ html(lang='en')
                 .thumbnail
                   .caption
                     h4
-                      a(href='/memo/'+memo._id)= memo.title
-                    p= memo.body
+                      a.txt_line(href='/memo/'+memo._id)= memo.title
+                    p.txt_post= memo.body
                     p= memo.date
     // /.container
     .container
