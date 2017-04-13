@@ -29,29 +29,33 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
     res.render('main');
-});
+})
 
 app.get('/note', (req, res) => {
     Memo.find((err, memos) => {
         res.render('note', {memos: memos});
     });
-});
+})
 
 app.get('/new', (req, res) => {
     res.render('new');
-});
+})
 
 app.get('/calendar', (req, res) => {
     res.render('calendar');
-});
+})
 
 app.get('/main', (req, res) => {
     res.render('main');
-});
+})
 
 app.get('/schedule', (req, res) => {
     res.render('schedule');
-});
+})
+
+app.get('/weather', (req, res) => {
+    res.render('weather');
+})
 
 app.post('/new', (req, res) => {
     var newMemo = new Memo();

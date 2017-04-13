@@ -8,18 +8,23 @@ html(lang='en')
     meta(name='author', content='')
     title Note
     // Bootstrap Core CSS
-    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', rel='stylesheet')
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", rel='stylesheet')
     // Custom CSS
     link(href='../stylesheets/shop-homepage.css', rel='stylesheet')
     // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
-    //
-      if lt IE 9
+    //if lt IE 9
       script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
       script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
     style.
       .container {
-      margin-left:10%;
+        margin-left:10%;
+      }
+      .ang_gimodak {
+        margin-top:10px;
+      }
+      .ang_gimoddi {
+        margin-top:60px;
       }
       /*!
         * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
@@ -86,7 +91,7 @@ html(lang='en')
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href='/main') My Note
+          a.navbar-brand(href='./') My Note
         // Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav
@@ -94,6 +99,7 @@ html(lang='en')
               a(href='#') Login
             li
               a(href='#') Register 
+
         // /.navbar-collapse
       // /.container
     // Page Content
@@ -105,12 +111,11 @@ html(lang='en')
             a.list-group-item(href='/note') Note
             a.list-group-item(href='/new') New
             a.list-group-item(href='/calendar') Calendar
-            a.list-group-item(href='./') Schedule
-            a.list-group-item(href='/weather') Weather
+            a.list-group-item(href='/schedule') Schedule
+            a.list-group-item(href='./') Weather
         .col-md-9.ang_gimoddi
           .row
-            .col-sm-4.col-lg-4.col-md-4
-              h2 시간표
+            p ㅋㅋ
     // /.container
     .container
       hr
