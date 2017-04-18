@@ -78,13 +78,13 @@ app.get('/weather', (req, res) => {
     res.render('weather');
 })
 
-var feed       = document.getElementById('feed-tabs')
-var ul         = feed.getElementsByTagName('ul')[0];
-var li         = ul.getElementsByTagName('li')[0];
-var large_temp = li.getElementsByClassName('large-temp')[0];
-var temp_label = li.getElementsByClassName('temp-label')[0];
-var realfeel   = li.getElementsByClassName('realfeel')[0];
-var cond       = li.getElementsByClassName('cond')[0];
+// var feed       = document.getElementById('feed-tabs')
+// var ul         = feed.getElementsByTagName('ul')[0];
+// var li         = ul.getElementsByTagName('li')[0];
+// var large_temp = li.getElementsByClassName('large-temp')[0];
+// var temp_label = li.getElementsByClassName('temp-label')[0];
+// var realfeel   = li.getElementsByClassName('realfeel')[0];
+// var cond       = li.getElementsByClassName('cond')[0];
 
 app.post('/new', (req, res) => {
     var newMemo = new Memo();
