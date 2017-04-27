@@ -11,6 +11,7 @@
 * Search  
 * Weather  
 * Schedule  
+* Login/register  
 
 ## How to install
 
