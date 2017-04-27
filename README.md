@@ -1,5 +1,7 @@
 # OSD_note
-
+![](https://github.com/alchon/OSD_note/blob/master/Pictures/Note.PNG)
+![](https://github.com/alchon/OSD_note/blob/master/Pictures/New.PNG)
+![](https://github.com/alchon/OSD_note/blob/master/Pictures/Calendar.PNG)
 ## Features
 * BYOS(Bring Your Own Server)  
 * Calendar  
