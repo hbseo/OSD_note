@@ -185,35 +185,7 @@ app.get('/weather', (req, res) => {
             var json     = JSON.parse(response.body);
             var weather  = json.response.body.items.item;
             var rainsnow = weather[1].obsrValue;
-            // switch(rainsnow) {
-            //     case 0:
-            //         rainsnow = undefined;
-            //         break;
-            //     case 1:
-            //         rainsnow = '비';
-            //         break;
-            //     case 2:
-            //         rainsnow = '비/눈';
-            //         break;
-            //     case 3:
-            //         rainsnow = '눈';
-            //         break;
-            // }
             var sky      = weather[4].obsrValue;
-            // switch(sky) {
-            //     case 1:
-            //         sky = '맑음';
-            //         break;
-            //     case 2:
-            //         sky = '구름조금';
-            //         break;
-            //     case 3:
-            //         sky = '구름많음';
-            //         break;
-            //     case 4:
-            //         sky = '흐림';
-            //         break;
-            // }
             var temp = weather[5].obsrValue + '℃';
 
             res.render('weather', {sky: sky, temp: temp, rainsnow: rainsnow});
