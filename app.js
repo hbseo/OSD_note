@@ -128,6 +128,35 @@ app.get('/search', (req, res) => {
     });
 });
 
+var client_id = 'YyZEQZQJuNwH9mdyaNm5';
+var client_secret = '8AcehL8A_6';
+app.get('/translator', function (req, res) {
+    var api_url = 'https://openapi.naver.com/v1/language/translate';
+    var query = req.body.title;
+    var options = {
+       url: api_url,
+       form: {'source':'ko', 'target':'en', 'text':query},
+       headers: {'X-Naver-Client-Id':client_id, 'X-Naver-Client-Secret': client_secret}
+    };
+   request.post(options, function (error, response, body) {
+     if (!error && response.statusCode == 200) {
+         var json     = JSON.parse(body);
+         var tmp = json.message.result.translatedText;
+         console.log(tmp)
+       res.render('translator', {result:tmp});
+     } else {
+       res.status(response.statusCode).end();
+       console.log('error = ' + response.statusCode);
+     }
+    });
+//    res.render('translator', {result:translatedText})
+});
+
+
+// app.get('/translator', (req, res) => {
+//     res.render('translator');
+// })
+
 app.get('/weather', (req, res) => {
     var nx = 58;
     var ny = 121;

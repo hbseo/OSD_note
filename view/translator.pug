@@ -26,6 +26,20 @@ html(lang='en')
       .ang_gimoddi {
         margin-top:60px;
       }
+      .ang_gimoo {
+        font-weight:bold;
+        width: 50px;
+        float: left;
+      }
+      #title,#body {
+        width:86.5%;
+      }
+      fieldset ul {
+        list-style-type:none;
+      }
+      .centered {
+        text-align:right;
+      }
       /*!
         * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
         * Copyright 2013-2016 Start Bootstrap
@@ -80,16 +94,6 @@ html(lang='en')
         footer {
             margin: 50px 0;
         }
-        .mdl-card {
-          width: 100%;
-          margin: 5px;
-        }  
-        .title {
-          font-size:20px;
-        }
-        .tem {
-          font-size:20px;
-        }
   body
     // Navigation
     nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
@@ -127,26 +131,19 @@ html(lang='en')
             a.list-group-item(href='/translator') Translator
         .col-md-9.ang_gimoddi
           .row
-            p.title 학교 날씨
-            p.tem
-              if sky == 1
-                img(src='sunny.png', alt='맑음')
-                = temp
-              if sky == 2
-                img(src='cloud1.png', alt='구름 조금')
-                = temp
-              if sky == 3
-                img(src='cloud2.png', alt='구름 많음')
-                = temp
-              if sky == 4
-                img(src='cloud2.png', alt = '흐림')
-                = temp
-              if rainsnow == 1
-                img(src='rain.png', alt='비')
-              if rainsnow == 2
-                img(src='rainsnow.png',alt='비/눈')
-              if rainsnow == 3
-                img(src='snow.png',alt='눈')
+            form(action='/translator', method='post', autocomplete='off')
+              fieldset
+                legend 번역
+                ul
+                  li
+                    label.ang_gimoo(for='title') 한국어
+                    textarea#title(name='title',rows='10', type='text', placeholder='마침표나 물음표 등 문장 부호까지 정확히 넣으시면, 번역 결과가 더 정확해 집니다.', maxlength='200')
+                  br
+                  li
+                    label.ang_gimoo(for='body') 영어
+                    textarea#body(name='body', rows='10', disabled)
+                  .centered
+                    input(type='submit', value="번역")
     // /.container
     .container
       hr
