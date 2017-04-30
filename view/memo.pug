@@ -10,7 +10,7 @@ html(lang='en')
     // Bootstrap Core CSS
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', rel='stylesheet')
     // Custom CSS
-    link(href='../../stylesheets/shop-homepage.css', rel='stylesheet')
+    //- link(href='../../stylesheets/shop-homepage.css', rel='stylesheet')
     // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
     //
@@ -127,9 +127,10 @@ html(lang='en')
             a.list-group-item(href='/calendar') Calendar
             a.list-group-item(href='/schedule') Schedule
             a.list-group-item(href='/weather') Weather
+            a.list-group-item(href='/map') Map
         .col-md-9.ang_gimoddi
           .row
-            form(action='#', method='post', autocomplete='off')
+            form(action='/memo/'+memo._id, method='post', autocomplete='off')
               fieldset
                 legend 메모
                 ul
@@ -150,7 +151,15 @@ html(lang='en')
         .row
           .col-lg-12
             p Copyright © 서현범 2017
+            #google_translate_element
     // /.container
+
+    script(type='text/javascript').
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'en,ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    script(type='text/javascript', src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit')
+
     // jQuery
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
     // Bootstrap Core JavaScript

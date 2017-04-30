@@ -10,8 +10,8 @@ html(lang='en')
     // Bootstrap Core CSS
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', rel='stylesheet')
     // Custom CSS
-    link(href='../stylesheets/shop-homepage.css', rel='stylesheet')
-    link(rel='stylesheet', href='css.css')
+    //- link(href='../stylesheets/shop-homepage.css', rel='stylesheet')
+    //- link(rel='stylesheet', href='css.css')
     // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
     //
@@ -165,7 +165,7 @@ html(lang='en')
       border: 1px solid #ddd;
       }
       .fc-state-highlight { /* <td> today cell */ /* TODO: add .fc-today to <th> */
-      background: #f6ffe1;
+      background: #f6ffe1 !important;
       font-weight:bold;
       }
       .fc-cell-overlay { /* semi-transparent rectangle while dragging */
@@ -545,9 +545,10 @@ html(lang='en')
           .list-group
             a.list-group-item(href='/note') Note
             a.list-group-item(href='/new') New
-            a.list-group-item(href='./') Calendar
+            a.list-group-item(href='/calendar') Calendar
             a.list-group-item(href='/schedule') Schedule
             a.list-group-item(href='/weather') Weather
+            a.list-group-item(href='/map') Map
         .col-md-9
           #calendar
     // /.container
@@ -558,7 +559,14 @@ html(lang='en')
         .row
           .col-lg-12
             p Copyright © 서현범 2017
+            #google_translate_element
     // /.container
+    script(type='text/javascript').
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'en,ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    script(type='text/javascript', src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit')
+
     // jQuery
     script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
     // Bootstrap Core JavaScript
