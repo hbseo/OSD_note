@@ -1,5 +1,5 @@
 ## Main
-![](https://github.com/alchon/OSD_note/blob/master/Pictures/main.PNG)
+![](https://github.com/alchon/OSD_note/blob/master/Pictures/main.PNG?raw=true)
 ## Note
 ![](https://github.com/alchon/OSD_note/blob/master/Pictures/Note.PNG)
 ## Search
