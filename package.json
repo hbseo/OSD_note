@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "build": "electron-packager . --out=dist --asar --overwite --all",
+    "build:win32": "electron-packager . --out=dist --asar --overwite --platform=win32 --arch=x64"
   },
   "author": "",
   "license": "ISC",
@@ -13,10 +15,14 @@
     "body-parser": "^1.17.1",
     "cheerio": "^0.22.0",
     "electron": "^1.6.6",
+    "electron-pug": "^1.5.1",
     "express": "^4.15.2",
     "mongoose": "^4.9.3",
     "mongoose-auto-increment": "^5.0.1",
     "pug": "^2.0.0-beta11",
     "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^8.6.0"
   }
 }
