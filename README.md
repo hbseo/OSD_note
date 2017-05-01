@@ -1,5 +1,8 @@
 # OSD_note
 
+## Screenshots  
+[Pictures](https://github.com/alchon/OSD_note/tree/master/Pictures)
+
 ## Features
 * Save, Edit, Delete notes
 * Calendar  
