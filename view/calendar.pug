@@ -9,6 +9,7 @@ html(lang='en')
     title Note
     // Bootstrap Core CSS
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', rel='stylesheet')
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
     // Custom CSS
     //- link(href='../stylesheets/shop-homepage.css', rel='stylesheet')
     //- link(rel='stylesheet', href='css.css')
@@ -564,16 +565,21 @@ html(lang='en')
             p Copyright © 서현범 2017
             #google_translate_element
     // /.container
-    script(type='text/javascript').
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'en,ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-      }
-    script(type='text/javascript', src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit')
 
     // jQuery
     script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
     // Bootstrap Core JavaScript
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
+    script(type='text/javascript', src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit')
+
+    script(type='text/javascript').
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'en,ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    
+
+    
+    
     script.
       $.getScript('http://arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.min.js',function(){
       var date = new Date();
@@ -609,3 +615,4 @@ html(lang='en')
       timeFormat : "HH:mm",
       });
       })
+

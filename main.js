@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var autoIncrement = require("mongoose-auto-increment");
 var request = require('request');
 var cheerio = require('cheerio')
-var app = express();
+var noteapp = express();
 
 
 mongoose.connect('mongodb://alchon:anjfqhk123@ds157740.mlab.com:57740/osd_note');
@@ -46,43 +46,43 @@ MemoSchema.plugin(autoIncrement.plugin, 'Memo');
 var Memo = mongoose.model('Memo', MemoSchema);
 
 
-app.set('view engine', 'pug');
-app.set('views', 'view');
+noteapp.set('view engine', 'pug');
+noteapp.set('views', 'view');
 
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.static('public'));
-app.get('/', (req, res) => {
+noteapp.use(bodyParser.urlencoded({ extended: true }))
+noteapp.use(express.static('public'));
+noteapp.get('/', (req, res) => {
     res.render('main');
 })
 
-app.get('/note', (req, res) => {
+noteapp.get('/note', (req, res) => {
     Memo.find({}).sort({update:-1}).exec((err, memos) => {
         res.render('note', {memos: memos});
     });
 })
 
 
-app.get('/new', (req, res) => {
+noteapp.get('/new', (req, res) => {
     res.render('new');
 })
 
-app.get('/calendar', (req, res) => {
+noteapp.get('/calendar', (req, res) => {
     res.render('calendar');
 })
 
-app.get('/main', (req, res) => {
+noteapp.get('/main', (req, res) => {
     res.render('main');
 })
 
-app.get('/schedule', (req, res) => {
+noteapp.get('/schedule', (req, res) => {
     res.render('schedule');
 })
 
-app.get('/map', (req,res) => {
+noteapp.get('/map', (req,res) => {
     res.render('map');
 })
 
-app.post('/new', (req, res) => {
+noteapp.post('/new', (req, res) => {
     var newMemo = new Memo();
     newMemo.title = req.body.title;
     newMemo.body = req.body.body;
@@ -92,19 +92,19 @@ app.post('/new', (req, res) => {
     });
 });
 
-app.get('/:id/delete', (req,res) => {
+noteapp.get('/:id/delete', (req,res) => {
     Memo.remove({'_id': req.params.id}, (err, output) => {
         res.redirect('/note');
     });
 })
 
-app.get('/memo/:id', (req, res) => {
+noteapp.get('/memo/:id', (req, res) => {
     Memo.findById(req.params.id, (err, memo) => {
         res.render('memo', {memo:memo});
     });
 });
 
-app.post('/memo/:id', (req, res) => {
+noteapp.post('/memo/:id', (req, res) => {
     Memo.findById(req.params.id, (err, doc) => {
         doc.title = req.body.title;
         doc.body = req.body.body;
@@ -117,7 +117,7 @@ app.post('/memo/:id', (req, res) => {
     })
 })
 
-app.get('/search', (req, res) => {
+noteapp.get('/search', (req, res) => {
     var search_word = req.param('searchWord');
     var searchCondition = {$regex:search_word};
 
@@ -131,7 +131,7 @@ app.get('/search', (req, res) => {
 var client_id = 'YyZEQZQJuNwH9mdyaNm5';
 var client_secret = '8AcehL8A_6';
 
-app.post('/translate', function (req, res) {
+noteapp.post('/translate', function (req, res) {
     var api_url = 'https://openapi.naver.com/v1/language/translate';
     var query = req.body.title;
     var options = {
@@ -154,11 +154,11 @@ app.post('/translate', function (req, res) {
 });
 
 
-app.get('/translator', (req, res) => {
+noteapp.get('/translator', (req, res) => {
     res.render('translator');
 })
 
-app.get('/weather', (req, res) => {
+noteapp.get('/weather', (req, res) => {
     var nx = 58;
     var ny = 121;
     var today = new Date();
@@ -223,21 +223,79 @@ app.get('/weather', (req, res) => {
     })
 });
 
-app.get('/calculator', (req, res) => {
+noteapp.get('/calculator', (req, res) => {
     res.render('calculator');
 })
 
-app.get('/game', (req, res) => {
+noteapp.get('/game', (req, res) => {
     res.render('game');
 })
 
-app.get('/test', (req, res) => {
+noteapp.get('/test', (req, res) => {
     res.render('test');
 })
 
 
 
-app.listen('3000', () => {
+noteapp.listen('3000', () => {
     console.log("Express is Connected 3000 Port!");
 });
 
+
+
+const {app, BrowserWindow} = require('electron')
+const path = require('path')
+const url = require('url')
+
+// 윈도우 객체를 전역에 유지합니다. 만약 이렇게 하지 않으면
+// 자바스크립트 GC가 일어날 때 창이 멋대로 닫혀버립니다.
+let win
+
+function createWindow () {
+  // 새로운 브라우저 창을 생성합니다.
+  win = new BrowserWindow({width: 1200, height: 800})
+
+  // 그리고 현재 디렉터리의 index.html을 로드합니다.
+  win.loadURL(url.format({
+    pathname: 'localhost:3000',
+    protocol: 'http:',
+    slashes: true
+  }))
+
+  // 개발자 도구를 엽니다.
+//   win.webContents.openDevTools()
+
+  // 창이 닫히면 호출됩니다.
+  win.on('closed', () => {
+    // 윈도우 객체의 참조를 삭제합니다. 보통 멀티 윈도우 지원을 위해
+    // 윈도우 객체를 배열에 저장하는 경우가 있는데 이 경우
+    // 해당하는 모든 윈도우 객체의 참조를 삭제해 주어야 합니다.
+    win = null
+  })
+}
+
+// 이 메서드는 Electron의 초기화가 끝나면 실행되며 브라우저
+// 윈도우를 생성할 수 있습니다. 몇몇 API는 이 이벤트 이후에만
+// 사용할 수 있습니다.
+app.on('ready', createWindow)
+
+// 모든 창이 닫히면 애플리케이션 종료.
+app.on('window-all-closed', () => {
+  // macOS의 대부분의 애플리케이션은 유저가 Cmd + Q 커맨드로 확실하게
+  // 종료하기 전까지 메뉴바에 남아 계속 실행됩니다.
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
+
+app.on('activate', () => {
+  // macOS에선 보통 독 아이콘이 클릭되고 나서도
+  // 열린 윈도우가 없으면, 새로운 윈도우를 다시 만듭니다.
+  if (win === null) {
+    createWindow()
+  }
+})
+
+// 이 파일엔 제작할 애플리케이션에 특화된 메인 프로세스 코드를
+// 포함할 수 있습니다. 또한 파일을 분리하여 require하는 방법으로
+// 코드를 작성할 수도 있습니다.
