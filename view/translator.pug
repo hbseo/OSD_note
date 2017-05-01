@@ -129,9 +129,11 @@ html(lang='en')
             a.list-group-item(href='/weather') Weather
             a.list-group-item(href='/map') Map
             a.list-group-item(href='/translator') Translator
+            a.list-group-item(href='/calculator') Calculator
+            a.list-group-item(href='/game') Game
         .col-md-9.ang_gimoddi
           .row
-            form(action='/translator', method='post', autocomplete='off')
+            form(action='/translate', method='get', autocomplete='off')
               fieldset
                 legend 번역
                 ul
@@ -141,7 +143,7 @@ html(lang='en')
                   br
                   li
                     label.ang_gimoo(for='body') 영어
-                    textarea#body(name='body', rows='10', disabled)
+                    textarea#body(name='body', rows='10', disabled)=result
                   .centered
                     input(type='submit', value="번역")
     // /.container

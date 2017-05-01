@@ -130,7 +130,7 @@ app.get('/search', (req, res) => {
 
 var client_id = 'YyZEQZQJuNwH9mdyaNm5';
 var client_secret = '8AcehL8A_6';
-app.get('/translator', function (req, res) {
+app.get('/translate', function (req, res) {
     var api_url = 'https://openapi.naver.com/v1/language/translate';
     var query = req.body.title;
     var options = {
@@ -143,7 +143,8 @@ app.get('/translator', function (req, res) {
          var json     = JSON.parse(body);
          var tmp = json.message.result.translatedText;
          console.log(tmp)
-       res.render('translator', {result:tmp});
+         if (!error)
+            res.render('translator', {result:tmp});
      } else {
        res.status(response.statusCode).end();
        console.log('error = ' + response.statusCode);
@@ -153,9 +154,9 @@ app.get('/translator', function (req, res) {
 });
 
 
-// app.get('/translator', (req, res) => {
-//     res.render('translator');
-// })
+app.get('/translator', (req, res) => {
+    res.render('translator');
+})
 
 app.get('/weather', (req, res) => {
     var nx = 58;
@@ -221,6 +222,19 @@ app.get('/weather', (req, res) => {
         }
     })
 });
+
+app.get('/calculator', (req, res) => {
+    res.render('calculator');
+})
+
+app.get('/game', (req, res) => {
+    res.render('game');
+})
+
+app.get('/test', (req, res) => {
+    res.render('test');
+})
+
 
 
 app.listen('3000', () => {

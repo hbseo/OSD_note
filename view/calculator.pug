@@ -8,38 +8,35 @@ html(lang='en')
     meta(name='author', content='')
     title Note
     // Bootstrap Core CSS
-    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', rel='stylesheet')
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", rel='stylesheet')
     // Custom CSS
-    //- link(href='../../stylesheets/shop-homepage.css', rel='stylesheet')
+    //- link(href='../stylesheets/shop-homepage.css', rel='stylesheet')
     // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
-    //
-      if lt IE 9
+    //if lt IE 9
       script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
       script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    script(src='/js/jquery-1.11.3.min.js')
+    script(src='/js/calc.js')
+    link(href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono', rel='stylesheet', type='text/css')
+    link(href='/css/calc.css', rel='stylesheet', type='text/css')
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-68050471-1', 'auto');
+      ga('send', 'pageview');
+    
     style.
       .container {
-      margin-left:10%;
+        margin-left:10%;
       }
       .ang_gimodak {
-      margin-top:10px;
+        margin-top:10px;
       }
       .ang_gimoddi {
-      margin-top:60px;
-      }
-      fieldset ul {
-      list-style-type:none;
-      }
-      label.ang_gimoo {
-      font-weight: bold;
-      width: 50px;
-      float: left;
-      }
-      div.centered {
-      text-align: right;
-      }
-      #title,#body {
-      width:86.5%;
+        margin-top:60px;
       }
       /*!
         * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
@@ -95,6 +92,7 @@ html(lang='en')
         footer {
             margin: 50px 0;
         }
+
   body
     // Navigation
     nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
@@ -114,6 +112,7 @@ html(lang='en')
               a(href='#') Login
             li
               a(href='#') Register 
+
         // /.navbar-collapse
       // /.container
     // Page Content
@@ -133,19 +132,20 @@ html(lang='en')
             a.list-group-item(href='/game') Game
         .col-md-9.ang_gimoddi
           .row
-            form(action='/memo/'+memo._id, method='post', autocomplete='off')
-              fieldset
-                legend 메모
-                ul
-                  li
-                    label.ang_gimoo(for='title') 제목
-                    input#title(type='text', name='title', value=memo.title)
-                  br
-                  li
-                    label.ang_gimoo(for='body') 내용
-                    textarea#body(name='body', rows='10')= memo.body
-                  .centered
-                    input(type='submit', value='저장')
+            hand
+                h1.mh1 Notepad Calculator
+                p.mp For jotting down quick calculations
+                .left.matchingArea
+                | Calculations
+                br
+                .right.matchingArea
+                | Answers
+                br
+                .mainContainer
+                ul.backgroundRuler.matchingArea.mul
+                textarea#inputArea.matchingArea.left(wrap='off')
+                ul#outputArea.matchingArea.right.mul
+
     // /.container
     .container
       hr

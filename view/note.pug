@@ -9,6 +9,7 @@ html(lang='en')
     title Note
     // Bootstrap Core CSS
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', rel='stylesheet')
+    link(href="https://fonts.googleapis.com/css?family=Courgette|Rationale|Lobster" rel="stylesheet")
     // Custom CSS
     //- link(href='../stylesheets/shop-homepage.css', rel='stylesheet')
     // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
@@ -34,6 +35,7 @@ html(lang='en')
         overflow:hidden; 
         text-overflow:ellipsis; 
         white-space:nowrap;
+        font-family : 'Lobster', cursive;
       }
       .txt_post {
         display: -webkit-box; 
@@ -46,7 +48,8 @@ html(lang='en')
         text-overflow: ellipsis; 
         word-break:break-all;
         -webkit-box-orient:vertical; 
-        -webkit-line-clamp:2
+        -webkit-line-clamp:2;
+        font-family :'Courgette', cursive;
       }
       .enote {
         height:170px !important;
@@ -158,6 +161,8 @@ html(lang='en')
             a.list-group-item(href='/weather') Weather
             a.list-group-item(href='/map') Map
             a.list-group-item(href='/translator') Translator
+            a.list-group-item(href='/calculator') Calculator
+            a.list-group-item(href='/game') Game
         .col-md-8.ang_gimoddi
           .row
             each memo in memos
