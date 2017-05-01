@@ -24,6 +24,12 @@
 npm install
 ```
 
+### `localhost:3000`
+
+```
+npm start
+```
+
 ### `electron`
 
 [`electron`](https://github.com/electron-userland/electron-prebuilt)은
