@@ -1,25 +1,33 @@
 doctype html
-html(lang='en')
+html.no-js(lang='en')
   head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    meta(name='description', content='')
-    meta(name='author', content='')
-    title Note
-    // Bootstrap Core CSS
-    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', rel='stylesheet')
-    // Custom CSS
-    //- link(href='../stylesheets/shop-homepage.css', rel='stylesheet')
-    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-    // WARNING: Respond.js doesn't work if you view the page via file://
-    //
-      if lt IE 9
-      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
-      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600', rel='stylesheet')
+    link(rel='stylesheet', href='css/schedule/reset.css')
+    // CSS reset
+    link(rel='stylesheet', href='css/schedule/style.css')
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", rel='stylesheet')
+    // Resource style
+    title Schedule Template | CodyHouse
     style.
       .container {
-      margin-left:10%;
+        margin-left:10%;
+      }
+      .ang_gimodak {
+        margin-top:10px;
+      }
+      .ang_gimoddi {
+        margin-top:60px;
+      }
+      .lll {
+          float:left;
+          position:absolute;
+      }
+      .cd-schedule {
+          float:right;
+          margin-right:13%;
+          width:60%;
       }
       /*!
         * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
@@ -94,10 +102,11 @@ html(lang='en')
               a(href='#') Login
             li
               a(href='#') Register 
+
         // /.navbar-collapse
       // /.container
     // Page Content
-    .container
+    .container.lll
       .row
         .col-md-3
           p.lead Menu
@@ -111,29 +120,154 @@ html(lang='en')
             a.list-group-item(href='/translator') Translator
             a.list-group-item(href='/calculator') Calculator
             a.list-group-item(href='/game') Game
-        .col-md-9.ang_gimoddi
-          .row
-            .col-sm-4.col-lg-4.col-md-4
-              h2 시간표
-              h3 추가 예정
+            //- a.list-group-item(href='/test') Test
+    .cd-schedule.loading
+      .timeline
+        ul
+          li
+            span 09:00
+          li
+            span 09:30
+          li
+            span 10:00
+          li
+            span 10:30
+          li
+            span 11:00
+          li
+            span 11:30
+          li
+            span 12:00
+          li
+            span 12:30
+          li
+            span 13:00
+          li
+            span 13:30
+          li
+            span 14:00
+          li
+            span 14:30
+          li
+            span 15:00
+          li
+            span 15:30
+          li
+            span 16:00
+          li
+            span 16:30
+          li
+            span 17:00
+          li
+            span 17:30
+          li
+            span 18:00
+      // .timeline
+      .events
+        ul
+          li.events-group
+            .top-info
+              span Monday
+            ul
+              li.single-event(data-start='11:00', data-end='12:00', data-content='event-english-comunication', data-event='event-1')
+                a(href='#0')
+                  em.event-name 영어커뮤니케이션1-초급
+              li.single-event(data-start='13:00', data-end='14:00', data-content='event-hycube-freshman', data-event='event-2')
+                a(href='#0')
+                  em.event-name 하이큐브 신입생 스터디
+              li.single-event(data-start='14:30', data-end='16:00', data-content='event-probablity', data-event='event-3')
+                a(href='#0')
+                  em.event-name 확률론
+              li.single-event(data-start='16:00', data-end='17:30', data-content='event-data-structures', data-event='event-4')
+                a(href='#0')
+                  em.event-name 자료구조론
+              li.single-event(data-start='17:30', data-end='19:00', data-content='event-zerone', data-event='event-5')
+                a(href='#0')
+                  em.event-name 0&1 신입생 스터디 
+          li.events-group
+            .top-info
+              span Tuesday
+            ul
+              li.single-event(data-start='13:00', data-end='14:30', data-content='event-data-structures', data-event='event-4')
+                a(href='#0')
+                  em.event-name 자료구조론
+              li.single-event(data-start='17:30', data-end='18:30', data-content='event-dcs', data-event='event-6')
+                a(href='#0')
+                  em.event-name 학생회 회의
+          li.events-group
+            .top-info
+              span Wednesday
+            ul
+              li.single-event(data-start='11:00', data-end='12:00', data-content='event-english-comunication', data-event='event-1')
+                a(href='#0')
+                  em.event-name 영어커뮤니케이션1-초급
+              li.single-event(data-start='14:00', data-end='15:00', data-content='event-tutoring', data-event='event-7')
+                a(href='#0')
+                  em.event-name 튜터링
+              li.single-event(data-start='15:00', data-end='17:00', data-content='event-dld', data-event='event-8')
+                a(href='#0')
+                  em.event-name 디지털논리설계
+              li.single-event(data-start='17:00', data-end='19:00', data-content='event-dld', data-event='event-8')
+                a(href='#0')
+                  em.event-name 디지털논리설계
+          li.events-group
+            .top-info
+              span Thursday
+            ul
+              li.single-event(data-start='11:00', data-end='12:00', data-content='event-osd', data-event='event-9')
+                a(href='#0')
+                  em.event-name 오픈소스 SW개발
+              li.single-event(data-start='13:00', data-end='15:00', data-content='event-osd', data-event='event-9')
+                a(href='#0')
+                  em.event-name 오픈소스 SW개발
+              li.single-event(data-start='15:00', data-end='16:30', data-content='event-linear-algebra', data-event='event-10')
+                a(href='#0')
+                  em.event-name 선형대수
+          li.events-group
+            .top-info
+              span Friday
+            ul
+              li.single-event(data-start='13:00', data-end='14:30', data-content='event-probablity', data-event='event-3')
+                a(href='#0')
+                  em.event-name 확률론
+              li.single-event(data-start='14:30', data-end='16:00', data-content='event-linear-algebra', data-event='event-10')
+                a(href='#0')
+                  em.event-name 선형대수
+      .event-modal
+        header.header
+          .content
+            span.event-date
+            h3.event-name
+          .header-bg
+        .body
+          .event-info
+          .body-bg
+        a.close(href='#0') Close
+      .cover-layer
+    // .cd-schedule
     // /.container
     .container
-      hr
-      // Footer
-      footer
-        .row
-          .col-lg-12
-            p Copyright © 서현범 2017
-            #google_translate_element
+        hr
+        // Footer
+        footer
+            .row
+            .col-lg-12
+                p Copyright © 서현범 2017
+                #google_translate_element
     // /.container
 
     script(type='text/javascript').
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'en,ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-      }
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'en,ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
     script(type='text/javascript', src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit')
 
-    // jQuery
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+
+    script(src='js/schedule/modernizr.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js')
+    script.
+      if( !window.jQuery ) document.write('<script src="js/schedule/jquery-3.0.0.min.js"><\\/script>');
+    script(src='js/schedule/main.js')
+    // Resource jQuery
     // Bootstrap Core JavaScript
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')

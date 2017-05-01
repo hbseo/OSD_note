@@ -1,52 +1,273 @@
 doctype html
-html(lang='en')
+html.no-js(lang='en')
   head
-    meta(charset='utf-8')
-    title A Scalable Web Tetris - Jérémy BOUNY
-    link(href='assets/css/bootstrap.min.css', rel='stylesheet')
-    link(href='assets/css/style.css', rel='stylesheet')
-    meta(name='apple-mobile-web-app-capable', content='yes')
-    meta(name='mobile-web-app-capable', content='yes')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600', rel='stylesheet')
+    link(rel='stylesheet', href='css/schedule/reset.css')
+    // CSS reset
+    link(rel='stylesheet', href='css/schedule/style.css')
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", rel='stylesheet')
+    // Resource style
+    title Schedule Template | CodyHouse
     style.
-        .dd {
-            color:white;
-            z-index:999;
+      .container {
+        margin-left:10%;
+      }
+      .ang_gimodak {
+        margin-top:10px;
+      }
+      .ang_gimoddi {
+        margin-top:60px;
+      }
+      .lll {
+          float:left;
+          position:absolute;
+      }
+      .cd-schedule {
+          float:right;
+          margin-right:13%;
+          width:60%;
+      }
+      /*!
+        * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
+        * Copyright 2013-2016 Start Bootstrap
+        * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+        */
+
+        body {
+            padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        }
+
+        .slide-image {
+            width: 100%;
+        }
+
+        .carousel-holder {
+            margin-bottom: 30px;
+        }
+
+        .carousel-control,
+        .item {
+            border-radius: 4px;
+        }
+
+        .caption {
+            height: 130px;
+            overflow: hidden;
+        }
+
+        .caption h4 {
+            white-space: nowrap;
+        }
+
+        .thumbnail img {
+            width: 100%;
+        }
+
+        .ratings {
+            padding-right: 10px;
+            padding-left: 10px;
+            color: #d17581;
+        }
+
+        .thumbnail {
+            padding: 0;
+        }
+
+        .thumbnail .caption-full {
+            padding: 9px;
+            color: #333;
+        }
+
+        footer {
+            margin: 50px 0;
         }
   body
-    //- #style-selector
-    //- #view_prev.action-icon
-    //- #view_next.action-icon
-    #pause.action-icon
-    #reload.action-icon
-    #fullscreen.action-icon
-    #infos
-    canvas#canvas-2d.viewer
-    #canvas-ascii.viewer
-    #canvas-3d.viewer
-    #canvas-3dshader.viewer
-    script(src='assets/libs/jquery.min.js')
-    script(src='assets/libs/hammer.min.js')
-    script(src='assets/libs/jquery.hammer.min.js')
-    script(src='assets/libs/three.min.js')
-    script(src='assets/libs/shaders/BleachBypassShader.js')
-    script(src='assets/libs/shaders/ColorCorrectionShader.js')
-    script(src='assets/libs/shaders/ConvolutionShader.js')
-    script(src='assets/libs/shaders/CopyShader.js')
-    script(src='assets/libs/shaders/FXAAShader.js')
-    script(src='assets/libs/postprocessing/EffectComposer.js')
-    script(src='assets/libs/postprocessing/BloomPass.js')
-    script(src='assets/libs/postprocessing/RenderPass.js')
-    script(src='assets/libs/postprocessing/ShaderPass.js')
-    script(src='assets/libs/postprocessing/MaskPass.js')
-    script(src='assets/libs/three/Mirror.js')
-    script(src='assets/fonts/helvetiker_regular.typeface.js')
-    script(src='assets/js/config.js')
-    script(src='assets/js/window.js')
-    script(src='assets/js/game.js')
-    script(src='assets/js/display/displayASCII.js')
-    script(src='assets/js/display/display2D.js')
-    script(src='assets/js/display/display3D.js')
-    script(src='assets/js/display/display3DShader.js')
-    script(src='assets/js/display.js')
-    script(src='assets/js/main.js')
+    // Navigation
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/main') My Note
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='#') Login
+            li
+              a(href='#') Register 
+
+        // /.navbar-collapse
+      // /.container
+    // Page Content
+    .container.lll
+      .row
+        .col-md-3
+          p.lead Menu
+          .list-group
+            a.list-group-item(href='/note') Note
+            a.list-group-item(href='/new') New
+            a.list-group-item(href='/calendar') Calendar
+            a.list-group-item(href='/schedule') Schedule
+            a.list-group-item(href='/weather') Weather
+            a.list-group-item(href='/map') Map
+            a.list-group-item(href='/translator') Translator
+            a.list-group-item(href='/calculator') Calculator
+            a.list-group-item(href='/game') Game
+            a.list-group-item(href='/test') Test
+    .cd-schedule.loading
+      .timeline
+        ul
+          li
+            span 09:00
+          li
+            span 09:30
+          li
+            span 10:00
+          li
+            span 10:30
+          li
+            span 11:00
+          li
+            span 11:30
+          li
+            span 12:00
+          li
+            span 12:30
+          li
+            span 13:00
+          li
+            span 13:30
+          li
+            span 14:00
+          li
+            span 14:30
+          li
+            span 15:00
+          li
+            span 15:30
+          li
+            span 16:00
+          li
+            span 16:30
+          li
+            span 17:00
+          li
+            span 17:30
+          li
+            span 18:00
+      // .timeline
+      .events
+        ul
+          li.events-group
+            .top-info
+              span Monday
+            ul
+              li.single-event(data-start='11:00', data-end='12:00', data-content='event-english-comunication', data-event='event-1')
+                a(href='#0')
+                  em.event-name 영어커뮤니케이션1-초급
+              li.single-event(data-start='13:00', data-end='14:00', data-content='event-hycube-freshman', data-event='event-2')
+                a(href='#0')
+                  em.event-name 하이큐브 신입생 스터디
+              li.single-event(data-start='14:30', data-end='16:00', data-content='event-probablity', data-event='event-3')
+                a(href='#0')
+                  em.event-name 확률론
+              li.single-event(data-start='16:00', data-end='17:30', data-content='event-data-structures', data-event='event-4')
+                a(href='#0')
+                  em.event-name 자료구조론
+              li.single-event(data-start='17:30', data-end='19:00', data-content='event-zerone', data-event='event-5')
+                a(href='#0')
+                  em.event-name 0&1 신입생 스터디 
+          li.events-group
+            .top-info
+              span Tuesday
+            ul
+              li.single-event(data-start='13:00', data-end='14:30', data-content='event-data-structures', data-event='event-4')
+                a(href='#0')
+                  em.event-name 자료구조론
+              li.single-event(data-start='17:30', data-end='18:30', data-content='event-dcs', data-event='event-6')
+                a(href='#0')
+                  em.event-name 학생회 회의
+          li.events-group
+            .top-info
+              span Wednesday
+            ul
+              li.single-event(data-start='11:00', data-end='12:00', data-content='event-english-comunication', data-event='event-1')
+                a(href='#0')
+                  em.event-name 영어커뮤니케이션1-초급
+              li.single-event(data-start='14:00', data-end='15:00', data-content='event-tutoring', data-event='event-7')
+                a(href='#0')
+                  em.event-name 튜터링
+              li.single-event(data-start='15:00', data-end='17:00', data-content='event-dld', data-event='event-8')
+                a(href='#0')
+                  em.event-name 디지털논리설계
+              li.single-event(data-start='17:00', data-end='19:00', data-content='event-dld', data-event='event-8')
+                a(href='#0')
+                  em.event-name 디지털논리설계
+          li.events-group
+            .top-info
+              span Thursday
+            ul
+              li.single-event(data-start='11:00', data-end='12:00', data-content='event-osd', data-event='event-9')
+                a(href='#0')
+                  em.event-name 오픈소스 SW개발
+              li.single-event(data-start='13:00', data-end='15:00', data-content='event-osd', data-event='event-9')
+                a(href='#0')
+                  em.event-name 오픈소스 SW개발
+              li.single-event(data-start='15:00', data-end='16:30', data-content='event-linear-algebra', data-event='event-10')
+                a(href='#0')
+                  em.event-name 선형대수
+          li.events-group
+            .top-info
+              span Friday
+            ul
+              li.single-event(data-start='13:00', data-end='14:30', data-content='event-probablity', data-event='event-3')
+                a(href='#0')
+                  em.event-name 확률론
+              li.single-event(data-start='14:30', data-end='16:00', data-content='event-linear-algebra', data-event='event-10')
+                a(href='#0')
+                  em.event-name 선형대수
+      .event-modal
+        header.header
+          .content
+            span.event-date
+            h3.event-name
+          .header-bg
+        .body
+          .event-info
+          .body-bg
+        a.close(href='#0') Close
+      .cover-layer
+    // .cd-schedule
+    // /.container
+    .container
+        hr
+        // Footer
+        footer
+            .row
+            .col-lg-12
+                p Copyright © 서현범 2017
+                #google_translate_element
+    // /.container
+
+    script(type='text/javascript').
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'en,ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    script(type='text/javascript', src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit')
+
+
+    script(src='js/schedule/modernizr.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js')
+    script.
+      if( !window.jQuery ) document.write('<script src="js/schedule/jquery-3.0.0.min.js"><\\/script>');
+    script(src='js/schedule/main.js')
+    // Resource jQuery
+    // Bootstrap Core JavaScript
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')

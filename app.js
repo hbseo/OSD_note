@@ -130,7 +130,8 @@ app.get('/search', (req, res) => {
 
 var client_id = 'YyZEQZQJuNwH9mdyaNm5';
 var client_secret = '8AcehL8A_6';
-app.get('/translate', function (req, res) {
+
+app.post('/translate', function (req, res) {
     var api_url = 'https://openapi.naver.com/v1/language/translate';
     var query = req.body.title;
     var options = {
@@ -142,9 +143,8 @@ app.get('/translate', function (req, res) {
      if (!error && response.statusCode == 200) {
          var json     = JSON.parse(body);
          var tmp = json.message.result.translatedText;
-         console.log(tmp)
          if (!error)
-            res.render('translator', {result:tmp});
+            res.render('translator', {korean: query, result:tmp});
      } else {
        res.status(response.statusCode).end();
        console.log('error = ' + response.statusCode);

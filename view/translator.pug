@@ -133,13 +133,15 @@ html(lang='en')
             a.list-group-item(href='/game') Game
         .col-md-9.ang_gimoddi
           .row
-            form(action='/translate', method='get', autocomplete='off')
+            form(action='/translate', method='post', autocomplete='off')
               fieldset
                 legend 번역
                 ul
                   li
                     label.ang_gimoo(for='title') 한국어
                     textarea#title(name='title',rows='10', type='text', placeholder='마침표나 물음표 등 문장 부호까지 정확히 넣으시면, 번역 결과가 더 정확해 집니다.', maxlength='200')
+                      if korean
+                        = korean
                   br
                   li
                     label.ang_gimoo(for='body') 영어
