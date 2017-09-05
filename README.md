@@ -60,4 +60,12 @@ $ ./node_modules/.bin/electron .
 
 ```bash
 $ .\node_modules\.bin\electron .
-```
+```  
+
+## 사용한 레퍼런스  
+ * [full calendar](https://fullcalendar.io/)  
+ * [schedule template](https://codyhouse.co/gem/schedule-template/)  
+ * [google map](https://developers.google.com/maps/?hl=ko)  
+ * [naver papago](https://developers.naver.com/main/)  
+ * [notepad calculator](https://github.com/SteveRidout/notepad-calculator)  
+ * [tetris](https://github.com/jbouny/asw-tetris)
