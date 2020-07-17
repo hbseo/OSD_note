@@ -14,7 +14,7 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "cheerio": "^0.22.0",
-    "electron": "^1.6.6",
+    "electron": "^7.2.4",
     "electron-pug": "^1.5.1",
     "express": "^4.15.2",
     "mongoose": "^5.7.5",
