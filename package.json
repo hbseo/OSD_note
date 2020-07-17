@@ -17,7 +17,7 @@
     "electron": "^1.6.6",
     "electron-pug": "^1.5.1",
     "express": "^4.15.2",
-    "mongoose": "^4.9.3",
+    "mongoose": "^5.7.5",
     "mongoose-auto-increment": "^5.0.1",
     "pug": "^2.0.0-beta11",
     "request": "^2.81.0"
