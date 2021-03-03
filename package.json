@@ -19,7 +19,7 @@
     "express": "^4.15.2",
     "mongoose": "^5.7.5",
     "mongoose-auto-increment": "^5.0.1",
-    "pug": "^2.0.0-beta11",
+    "pug": "^3.0.1",
     "request": "^2.81.0"
   },
   "devDependencies": {
